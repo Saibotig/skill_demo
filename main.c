@@ -5,7 +5,7 @@
 void printRandom(int lower, int upper, int n) {
 	for (int i = 0; i < n; i++) {
 		int rnd = (rand() % (upper + lower)) - lower;
-		printf("%d", rnd);
+		printf("Number %d: %d\n", i + 1, rnd);
 	}
 }
 
