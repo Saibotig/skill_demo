@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 //function to print random numbers
 void printRandom(int lower, int upper, int n) {
