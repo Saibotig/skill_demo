@@ -1,0 +1,11 @@
+# cmocka pkg-config source file
+
+prefix=C:/Repos/cmocka
+libdir=C:/Repos/cmocka/lib
+includedir=C:/Repos/cmocka/include
+
+Name: cmocka
+Description: The cmocka unit testing library
+Version: 1.1.5
+Libs: -L${libdir} -lcmocka
+Cflags: -I${includedir}

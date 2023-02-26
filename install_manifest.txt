@@ -1,0 +1,9 @@
+C:/Repos/cmocka/lib/pkgconfig/cmocka.pc
+C:/Repos/cmocka/lib/cmake/cmocka/cmocka-config-version.cmake
+C:/Repos/cmocka/include/cmocka.h
+C:/Repos/cmocka/include/cmocka_pbc.h
+C:/Repos/cmocka/include/cmocka_version.h
+C:/Repos/cmocka/lib/libcmocka.dll.a
+C:/Repos/cmocka/bin/cmocka.dll
+C:/Repos/cmocka/lib/cmake/cmocka/cmocka-config.cmake
+C:/Repos/cmocka/lib/cmake/cmocka/cmocka-config-debug.cmake
