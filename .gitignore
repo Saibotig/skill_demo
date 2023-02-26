@@ -50,3 +50,18 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# cmake & cmoka
+*.swp
+*~$
+tags
+cscope.*
+.ycm_extra_conf.pyc
+compile_commands.json
+/.clangd
+/.cache
+/build
+/obj*
+
+#visual studio code launch & debug configs
+*.vscode
