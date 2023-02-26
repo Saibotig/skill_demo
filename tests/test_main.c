@@ -19,6 +19,24 @@ int compare (const void * a, const void * b) {
     // return arg1 - arg2; // erroneous shortcut (fails if INT_MIN is present)
 }
 
+static void test_compare(void **state) {
+	(void) state; /* unused */
+
+	int returnValue = 0;
+	int a = 5;
+	int b = 4;
+	returnValue = compare((void*) &a, (void*) &b);
+	assert_int_equal(returnValue, 1);
+
+	a = 1;
+	returnValue = compare((void*) &a, (void*) &b);
+	assert_int_equal(returnValue, -1);
+
+	b = 1;
+	returnValue = compare((void*) &a, (void*) &b);
+	assert_int_equal(returnValue, 0);
+}
+
 static void test_qsort(void **state) {
 	(void) state; /* unused */
 
@@ -38,10 +56,19 @@ int test_black_box(void) {
 	return cmocka_run_group_tests_name("black box tests of build in functions", tests, NULL, NULL);
 }
 
+int test_white_box(void) {
+	const struct CMUnitTest tests[] = {
+		cmocka_unit_test(test_compare),
+	};
+
+	return cmocka_run_group_tests_name("white box tests of build in functions", tests, NULL, NULL);
+}
+
 int main(int arg, char* argv[]) {
 	int returnCode = 0;
 
 	returnCode |= test_black_box();
+	returnCode |= test_white_box();
 
 	return returnCode;
 }
