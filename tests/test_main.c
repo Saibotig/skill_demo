@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <cmocka.h>
 #include <stdlib.h>
+#include "../util.h"
 
 #define NUM_OF_ELEMENTS   6U
 
@@ -48,6 +49,13 @@ static void test_qsort(void **state) {
 	assert_memory_equal(&values, &values_sorted, sizeof(unsigned int) * NUM_OF_ELEMENTS);
 }
 
+static void test_addsFive(void **state) {
+	(void) state; /* unused */
+	int five = 0;
+	addsFive(&five);
+	assert_int_equal(five, 5);
+}
+
 int test_black_box(void) {
 	const struct CMUnitTest tests[] = {
 		cmocka_unit_test(test_qsort),
@@ -59,6 +67,7 @@ int test_black_box(void) {
 int test_white_box(void) {
 	const struct CMUnitTest tests[] = {
 		cmocka_unit_test(test_compare),
+		cmocka_unit_test(test_addsFive),
 	};
 
 	return cmocka_run_group_tests_name("white box tests of build in functions", tests, NULL, NULL);
